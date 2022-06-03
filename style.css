@@ -1,0 +1,82 @@
+/* --GERAL-- */
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap'); /*Questrial*/
+
+*{
+    margin: 0; padding: 0;
+    list-style: none; box-sizing: border-box;
+    text-decoration: none; font-family: 'Questrial', sans-serif;
+}
+
+/* --VARIAVEIS-- */
+:root{
+    --back: #1D1D1D;
+    --back1: #1C2333;
+}
+
+/* --TOPO-- */
+.topo{
+    background-color: var(--back1);
+    color: #F2F2F2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+}
+
+/* -logo- */
+.logo span{
+    font-size: 1.3rem;
+}
+
+.logo span:nth-child(2){
+    font-size: 1.4rem;
+    color: #FF8E00;
+    font-weight: bold;
+}
+
+/* -navTopo- */
+.menuTopo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar-topo{
+    margin: 0 10px;
+    width: 30px;
+    height: 30px;
+    background-color: #F2F2F2;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+}
+
+/* --CONTENTEUDO-- */
+.content{
+    display: flex;
+    width: 100%;
+    max-width: 1440px;
+}
+
+    /* -menu-lateral- */
+    .menuLateral{
+        background: var(--back1);
+        color: #fff;
+        padding: 5px 20px;
+        height: calc(100vh - 50px);
+    }
+
+    .navBarL ul li{
+        padding: 5px 0px;
+    }
+
+    /* -visualContent- */
+    .visualContent{
+        
+    }
+
+/* --RODAPE-- */
+
+/* --RESPONSIVO-- */
