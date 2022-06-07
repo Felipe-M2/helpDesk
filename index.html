@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- --TOPO-- -->
+    <!-- ----- --TOPO-- ----- -->
     <header class="topo">
 
         <!-- -logo- -->
@@ -32,19 +32,27 @@
 
     </header>
 
-    <!-- --CONTENTEUDO-- -->
+    <!-- ----- --CONTENTEUDO-- ----- -->
     <main class="content">
 
-        <!-- -menu-lateral- -->
+        <!-- --menu-lateral-- -->
         <section class="menuLateral">
 
-            <button class="btnMenuL">BTN</button>
+            <!-- -btnMenuL- -->
+            <button class="btnMenuL"><i class="bi-js bi bi-x-lg"></i></button>
 
+            <!-- -navBarL- -->
             <nav class="navBarL">
 
-                <ul>
-                    <li>Operacional</li>
-                    <li>Corporativo</li>
+                <!-- -btnRegChamada- -->
+                <ul class="ul1">
+                    <li class="regChamada">Chamada</li>
+                </ul>
+
+                <!-- -menuUl2- -->
+                <ul class="ul2">
+                    <li class="operacional">Operacional</li>
+                    <li class="corporativo">Corporativo</li>
                     <li>Repositorios
                         <ul>
                             <li>ServiceDesk</li>
@@ -59,54 +67,135 @@
 
         </section>
 
-        <!-- -visualContent- -->
+        <!-- --visualContent-- -->
         <section class="visualContent">
 
-            <div class="links">
+            <!-- -operacional- -->
+            <div class="linksVisual visulActive links-operacional">
 
-                <div class="cardLink">
-
-                </div>
+                <h1>Operacional</h1>
 
                 <div class="cardLink">
                     <a href="">
                         <p>SmartIT</p>
-                        <span></span>
+                        <span>Consulta</span>
                     </a>
                 </div>
 
                 <div class="cardLink">
-
+                    <a href="">
+                        <p>DWP</p>
+                        <span>Abertura</span>
+                    </a>
                 </div>
 
                 <div class="cardLink">
-
+                    <a href="">
+                        <p>IndentidadeOI</p>
+                        <span>Consulta</span>
+                    </a>
                 </div>
 
                 <div class="cardLink">
-
+                    <a href="">
+                        <p>OutLook</p>
+                        <span>Comunicação</span>
+                    </a>
                 </div>
 
                 <div class="cardLink">
-
+                    <a href="">
+                        <p>Teams</p>
+                        <span>Comunicação</span>
+                    </a>
                 </div>
 
                 <div class="cardLink">
-
+                    <a href="">
+                        <p>CCO</p>
+                        <span>Consulta</span>
+                    </a>
                 </div>
 
                 <div class="cardLink">
+                    <a href="">
+                        <p>CCSN</p>
+                        <span>Portal</span>
+                    </a>
+                </div>
 
+            </div>
+
+            <!-- -corporativo- -->
+            <div class="linksVisual links-corporativo">
+
+                <h1>Corporativo</h1>
+
+                <div class="cardLink">
+                    <a href="">
+                        <p>TotalView</p>
+                        <span>Consulta</span>
+                    </a>
+                </div>
+
+                <div class="cardLink">
+                    <a href="">
+                        <p>GIP</p>
+                        <span>Abertura/Consulta</span>
+                    </a>
+                </div>
+
+                <div class="cardLink">
+                    <a href="">
+                        <p>MinhaBTCC</p>
+                        <span>Abertura/Consulta</span>
+                    </a>
                 </div>
 
             </div>
 
         </section>
 
-        <!-- -painelContent- -->
+        <!-- --painelContent-- -->
         <aside class="painelContent">
 
         </aside>
+
+        <!-- --menuModal-- -->
+        <section class="menuModal">
+        
+            <!-- -topoModal- -->
+            <div class="btnTopoModal">
+
+                <h1 class="tituloModal">Registro de Atendimento</h1>
+                
+                <i class="bi bi-x-lg"></i>
+
+            </div>
+
+            <!-- -formularioModal- -->
+            <div class="formModal">
+
+                    <form>
+
+                        <label for="nomeModal">Nome:</label>
+                        <input type="name" name="nome" id="nomeModal" placeholder="Nome">
+
+                        <label for="matriculaModal">Matricula:</label>
+                        <input type="name" name="matricula" id="matriculaModal" placeholder="Matricula">
+
+                        <label for="nunChModal">Numero Do Chamado:</label>
+                        <input type="name" name="nunChModal" id="nunChModal" placeholder="Numero Do Chamado">
+
+                        <label for="empresa">Empresa:</label>
+                        <input type="name" name="empresa" id="empresaModal" placeholder="Empresa">
+                        
+                        
+                    </form>
+                    
+                </div>
+
+        </section>
 
 
     </main>

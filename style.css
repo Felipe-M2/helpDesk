@@ -1,26 +1,34 @@
-/* --GERAL-- */
-@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap'); /*Questrial*/
+/*----- --GERAL-- -----*/
+/* /* @import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap'); questrial */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');  /* inter */
+
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css");  /* icons */
 
 *{
     margin: 0; padding: 0;
-    list-style: none; box-sizing: border-box;
-    text-decoration: none; font-family: 'Questrial', sans-serif;
+    list-style: none; text-decoration: none;
+    box-sizing: border-box; font-family: 'Inter', sans-serif;
+    transition: 200ms;scroll-behavior: smooth;
+    overflow: hidden;
 }
 
-/* --VARIAVEIS-- */
+/*----- --VARIAVEIS-- -----*/
 :root{
     --back: #1D1D1D;
     --back1: #1C2333;
+    --corFont: #FF8E00;
 }
 
-/* --TOPO-- */
+/*----- --TOPO-- -----*/
 .topo{
     background-color: var(--back1);
     color: #F2F2F2;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 30px;
+    height: 50px;
+    padding: 0 20px;
 }
 
 /* -logo- */
@@ -30,7 +38,7 @@
 
 .logo span:nth-child(2){
     font-size: 1.4rem;
-    color: #FF8E00;
+    color: var(--corFont);
     font-weight: bold;
 }
 
@@ -53,29 +61,182 @@
     color: #000;
 }
 
-/* --CONTENTEUDO-- */
+/*----- --CONTENTEUDO-- -----*/
 .content{
     display: flex;
     width: 100%;
-    max-width: 1440px;
+    overflow-x: hidden;
+    position: relative;
 }
 
-    /* -menu-lateral- */
-    .menuLateral{
-        background: var(--back1);
-        color: #fff;
-        padding: 5px 20px;
-        height: calc(100vh - 50px);
+/* --menu-lateral-- */
+.menuLateral{
+    background: #1C2333;
+    color: #fff;
+    padding: 5px 30px;
+    height: calc(100vh - 50px);
+}
+
+/* -btnMenuL- */
+.btnMenuL{
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: right;
+}
+
+.btnMenuL i{
+    color: #fff;
+    font-size: 1.7rem;
+    cursor: pointer;
+}
+
+/* -navBarL- */
+.navBarL{
+    display: block;
+    transition: 300ms;
+}
+
+/* -btnRegChamada- */
+.ul1{
+    margin: 10px 0;
+}
+
+.ul1:hover{
+    background: rgba(255, 255, 255, 0.301);
+}
+
+.ul1 li{
+    color: var(--corFont);
+    border: 3px solid #fff;
+    padding: 5px;
+    text-align: center;
+}
+
+/* -menuUl2- */
+.ul2{
+    width: 150px;
+}
+
+.navBarL ul li{
+    padding: 5px 0px;
+    cursor: pointer;
+}
+
+.navBarL ul li ul{
+    margin-left: 10px;
+}
+
+/* --visualContent-- */
+.visualContent{
+    padding: 5px;
+    width: 100%;
+}
+
+.cardLink{
+    width: 100%;
+    border: 1px solid #8f8f8f;
+    margin: 3px 0;
+}/*// Cards Geral */
+
+.cardLink:hover,
+.cardLink *:hover{
+    background: #323e5a;
+    color: #fff;
+    transition: 200ms;
+}
+
+.linksVisual{
+    display: none;
+}
+
+.cardLink a{
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #000;
+    padding: 5px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.linksVisual h1{
+    background:#323e5a;
+    margin-bottom: 10px;
+    color: #E76902;
+    padding: 5px;
+}
+
+.visulActive{
+    display: block;
+    animation: visul 400ms ease-in-out;
+}
+
+@keyframes visul {
+    0%{
+        opacity: 0;
     }
 
-    .navBarL ul li{
-        padding: 5px 0px;
+    100%{
+        opacity: 1;
+    }
+}
+
+/* --painelContent-- */
+.painelContent{
+    width: 100%;
+    max-width: 250px;
+    border: 2px solid var(--back1);
+    margin: 5px 5px 5px 0;
+}
+
+/* --menuModal-- */
+.menuModal{
+    width: 50%;
+    height: calc(100vh - 50px);
+    position: absolute;
+    background: #fff;
+    display: none;
+    right: 0;
+    padding: 20px;
+}
+
+.menuModalActive{
+    display: block;
+    animation: modalForm 300ms ease-in-out;
+}
+
+@keyframes modalForm{
+    0%{
+        right: -50%;
     }
 
-    /* -visualContent- */
-    .visualContent{
-        
+    100%{
+        right: 0;
     }
+}
+
+/* -menuModal- */
+.btnTopoModal{
+    width: 100%;
+    cursor: pointer;
+    font-size: 1.6rem;
+    font-weight: 900;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btnTopoModal h1{
+    font-size: 1.4rem;
+    color: var(--corFont)
+}
+
+form *{
+    display: block;
+    outline: none;
+    
+}
 
 /* --RODAPE-- */
 
