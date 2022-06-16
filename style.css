@@ -9,7 +9,7 @@
     margin: 0; padding: 0;
     list-style: none; text-decoration: none;
     box-sizing: border-box; font-family: 'Inter', sans-serif;
-    transition: 200ms;scroll-behavior: smooth;
+    transition: 100ms; scroll-behavior: smooth;
     overflow: hidden;
 }
 
@@ -46,7 +46,6 @@
 .menuTopo{
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 
 .avatar-topo{
@@ -143,18 +142,19 @@
 .cardLink *:hover{
     background: #323e5a;
     color: #fff;
-    transition: 200ms;
+    transition: all 50ms ease 0s;
+    text-decoration: none;
 }
 
 .linksVisual{
     display: none;
 }
 
-.cardLink a{
+.cardLink > a{
     height: 30px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center !important;
     color: #000;
     padding: 5px;
     font-weight: 500;
@@ -200,6 +200,7 @@
     display: none;
     right: 0;
     padding: 20px;
+    border: 5px solid var(--back1)
 }
 
 .menuModalActive{
@@ -217,12 +218,9 @@
     }
 }
 
-/* -menuModal- */
+/* -topoModal- */
 .btnTopoModal{
     width: 100%;
-    cursor: pointer;
-    font-size: 1.6rem;
-    font-weight: 900;
     display: flex;
     justify-content: space-between;
 }
@@ -232,12 +230,148 @@
     color: var(--corFont)
 }
 
-form *{
+/* -formuularioModal- */
+.formModal form div *{
     display: block;
     outline: none;
-    
+    width: 100%;
 }
 
+.formModal form{
+    display: grid;
+    grid-template-columns: 45% 45%;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.formModal form input{
+    height: 30px;
+    padding: 0 5px;
+    border: 1px solid;
+    border-radius: 8px;
+}
+
+.formModal form label{
+    cursor: pointer;
+    margin: 10px 0 3px 5px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.btn-form-div{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    top: 300px;
+}
+
+.btn-form{
+    background: rgb(233, 233, 233);
+    min-width: 120px;
+    height: 40px;
+    border-radius: 15px;
+    outline: none;
+    border: 1px solid;
+    box-shadow: 2px 1px 4px #000;
+    cursor: pointer;
+    transition: 200ms;
+}
+
+.btn-form:hover{
+    color: var(--corFont);
+    background: var(--back1)
+}
+
+.btn-form-div .btn-x-modal{
+    justify-content: left;
+    display: flex;
+    padding: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 0 20px;
+    text-decoration: underline 2px;
+    font-weight: 500;
+    transition: 200ms;
+}
+
+.btn-x-modal:hover{
+    color: #ff0000;
+    text-decoration: underline 2px #ff0000;
+}
+
+/*- --tabelaCH-- -*/
+#table{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    background: #fff;
+    overflow: auto;
+}
+
+.btnXlist{
+    position: fixed;
+    right: 10px;
+    margin: 20px;
+    font-size: 1.5rem;
+    color: #fff;
+    background: var(--back1);
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.imprimir{
+    top: 100px;
+    background: none;
+    text-decoration: underline;
+    color: #000;
+}
+
+table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    display: flex;
+    flex-direction: column;
+}
+
+.tabelaCHhead{
+    background: var(--back1);
+    border: 2px solid;
+}
+
+table th,
+table td {
+    text-align: center;
+    width: 200px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+table tr {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    display: flex;
+}
+
+table td:nth-child(2),
+table td:nth-child(4),
+table td:nth-child(6),
+table td:nth-child(8),
+table td:nth-child(10){
+    display: none;
+}
+
+table th {
+    font-size: .85em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
 /* --RODAPE-- */
 
 /* --RESPONSIVO-- */

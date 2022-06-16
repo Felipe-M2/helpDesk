@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Service_DESK</title>
+    <title>help_DESK</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <!-- ----- --TOPO-- ----- -->
     <header class="topo">
@@ -13,7 +15,7 @@
         <!-- -logo- -->
         <section class="logo">
 
-            <span>service</span><span>DESK</span>
+            <span>help</span><span>DESK</span>
 
         </section>
 
@@ -46,7 +48,7 @@
 
                 <!-- -btnRegChamada- -->
                 <ul class="ul1">
-                    <li class="regChamada">Chamada</li>
+                    <li class="regChamada">Chamado</li>
                 </ul>
 
                 <!-- -menuUl2- -->
@@ -56,11 +58,11 @@
                     <li>Repositorios
                         <ul>
                             <li>ServiceDesk</li>
-                            <li>CA</li>
                         </ul>
                     </li>
                     <li>Arquivos</li>
                     <li>Info</li>
+                    <li class="relChTable">Relatorio</li>
                 </ul>
 
             </nav>
@@ -77,49 +79,49 @@
 
                 <div class="cardLink">
                     <a href="">
-                        <p>SmartIT</p>
+                        <span>SmartIT</span>
                         <span>Consulta</span>
                     </a>
                 </div>
 
                 <div class="cardLink">
                     <a href="">
-                        <p>DWP</p>
+                        <span>DWP</span>
                         <span>Abertura</span>
                     </a>
                 </div>
 
                 <div class="cardLink">
                     <a href="">
-                        <p>IndentidadeOI</p>
+                        <span>IndentidadeOI</span>
                         <span>Consulta</span>
                     </a>
                 </div>
 
                 <div class="cardLink">
                     <a href="">
-                        <p>OutLook</p>
+                        <span>OutLook</span>
                         <span>Comunicação</span>
                     </a>
                 </div>
 
                 <div class="cardLink">
                     <a href="">
-                        <p>Teams</p>
+                        <span>Teams</span>
                         <span>Comunicação</span>
                     </a>
                 </div>
 
                 <div class="cardLink">
                     <a href="">
-                        <p>CCO</p>
+                        <span>CCO</span>
                         <span>Consulta</span>
                     </a>
                 </div>
 
                 <div class="cardLink">
                     <a href="">
-                        <p>CCSN</p>
+                        <span>CCSN</span>
                         <span>Portal</span>
                     </a>
                 </div>
@@ -133,21 +135,21 @@
 
                 <div class="cardLink">
                     <a href="">
-                        <p>TotalView</p>
+                        <span>TotalView</span>
                         <span>Consulta</span>
                     </a>
                 </div>
 
                 <div class="cardLink">
                     <a href="">
-                        <p>GIP</p>
+                        <span>GIP</span>
                         <span>Abertura/Consulta</span>
                     </a>
                 </div>
 
                 <div class="cardLink">
                     <a href="">
-                        <p>MinhaBTCC</p>
+                        <span>MinhaBTCC</span>
                         <span>Abertura/Consulta</span>
                     </a>
                 </div>
@@ -163,43 +165,83 @@
 
         <!-- --menuModal-- -->
         <section class="menuModal">
-        
+
             <!-- -topoModal- -->
             <div class="btnTopoModal">
 
                 <h1 class="tituloModal">Registro de Atendimento</h1>
-                
-                <i class="bi bi-x-lg"></i>
 
             </div>
 
             <!-- -formularioModal- -->
             <div class="formModal">
 
-                    <form>
+                <form id="form">
 
+                    <div>
                         <label for="nomeModal">Nome:</label>
-                        <input type="name" name="nome" id="nomeModal" placeholder="Nome">
+                        <input type="name" name="nome" id="nomeModal" class="inputClear" placeholder="Nome">
+                    </div>
 
+                    <div>
                         <label for="matriculaModal">Matricula:</label>
-                        <input type="name" name="matricula" id="matriculaModal" placeholder="Matricula">
+                        <input type="text" name="matricula" id="matriculaModal" class="inputClear" placeholder="Matricula">
+                    </div>
 
+                    <div>
+                        <label for="contatoModal">Contato:</label>
+                        <input type="text" name="contato" id="contatoModal" class="inputClear" placeholder="Contato">
+                    </div>
+
+                    <div>
                         <label for="nunChModal">Numero Do Chamado:</label>
-                        <input type="name" name="nunChModal" id="nunChModal" placeholder="Numero Do Chamado">
+                        <input type="text" name="nunChModal" id="nunChModal" class="inputClear" placeholder="Numero Do Chamado">
+                    </div>
 
-                        <label for="empresa">Empresa:</label>
-                        <input type="name" name="empresa" id="empresaModal" placeholder="Empresa">
+                    <div>
+                        <label for="empresaModal">Empresa:</label>
+                        <input type="text" name="empresa" id="empresaModal" class="inputClear" placeholder="Empresa">
+                    </div>
+
+                    <div class="btn-form-div">
+
+                        <button type="button" class="btn-form">Registrar</button>
+
+                        <span class="btn-x-modal">Fechar</span>
                         
-                        
-                    </form>
-                    
-                </div>
+                    </div>
+
+                </form>
+
+            </div>
 
         </section>
 
+        <!-- --tabelaCH-- -->
+        <section id="table">
 
+            <i class="bi-js bi bi-x-lg btnXlist"></i>
+            <a class="btnXlist imprimir" target="_blank" href="relatorioExterno/auxiliar.html">Imprimir</a>
+
+            <table class="tabelaCH">
+                <thead class="tabelaCHhead">
+                    <tr>
+                      <th>Nome</th>
+                      <th>Matricula</th>
+                      <th>Contato</th>
+                      <th>Nun Chamado</th>
+                      <th>Empresa</th>
+                    </tr>
+                </thead>
+                <tbody class="tabelaCHbody">
+                
+                </tbody>
+            </table>
+        </section>
+        
     </main>
 
     <script src="script/script.js"></script>
 </body>
+
 </html>
