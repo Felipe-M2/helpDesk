@@ -24,7 +24,7 @@
 .topo{
     background-color: var(--back1);
     color: #F2F2F2;
-    display: flex;
+    display: none;
     justify-content: space-between;
     align-items: center;
     height: 50px;
@@ -48,6 +48,14 @@
     align-items: center;
 }
 
+.nome-topo{
+    cursor: pointer;
+}
+
+.nome-topo:hover{
+    color: #ff0000;
+}
+
 .avatar-topo{
     margin: 0 10px;
     width: 30px;
@@ -62,7 +70,7 @@
 
 /*----- --CONTENTEUDO-- -----*/
 .content{
-    display: flex;
+    display: none;
     width: 100%;
     overflow-x: hidden;
     position: relative;
@@ -118,8 +126,30 @@
 }
 
 .navBarL ul li{
-    padding: 5px 0px;
+    padding: 5px 5px;
     cursor: pointer;
+    transform: 300ms;
+}
+
+.ul2 li:hover{
+    background-image: linear-gradient(90deg, #FF8E00, #ff8c0081, #ff8c0000);
+    animation: ulMenu 500ms;
+    animation-fill-mode: forwards;
+    transition: 1s;
+}
+
+@keyframes ulMenu{
+    0%{
+        background-image: linear-gradient(90deg, #ff8c0000);
+        background-size: 0%;
+        background-repeat: no-repeat;
+    }
+
+    100%{
+        background-image: linear-gradient(90deg, #FF8E00 20%, #ff8c0081, #ff8c0000);
+        background-size: 50%;
+        background-repeat: no-repeat;
+    }
 }
 
 .navBarL ul li ul{
@@ -189,6 +219,20 @@
     max-width: 250px;
     border: 2px solid var(--back1);
     margin: 5px 5px 5px 0;
+    padding: 5px;
+}
+
+.painelContent *{
+    display: flex;
+    margin: 3px;
+}
+
+.pDados{
+    font-size: 1.2rem;
+}
+
+.numAtendidas, .numLog{
+    color: #C43302;
 }
 
 /* --menuModal-- */
@@ -196,11 +240,11 @@
     width: 50%;
     height: calc(100vh - 50px);
     position: absolute;
-    background: #fff;
+    background: #e0e0e2;
     display: none;
     right: 0;
     padding: 20px;
-    border: 5px solid var(--back1)
+    border: 3px solid var(--back1);
 }
 
 .menuModalActive{
@@ -254,7 +298,7 @@
 .formModal form label{
     cursor: pointer;
     margin: 10px 0 3px 5px;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 500;
     letter-spacing: 1px;
 }
@@ -265,6 +309,7 @@
     align-items: center;
     padding: 5px;
     top: 300px;
+    width: 60%;
 }
 
 .btn-form{
@@ -287,7 +332,7 @@
 .btn-form-div .btn-x-modal{
     justify-content: left;
     display: flex;
-    padding: 5px;
+    padding: 3px;
     font-size: 1rem;
     cursor: pointer;
     margin: 0 20px;
@@ -325,10 +370,18 @@
 }
 
 .imprimir{
+    font-size: 1.2rem;
     top: 100px;
     background: none;
     text-decoration: underline;
     color: #000;
+}
+
+.btnExcluir{
+    color: #000;
+    font-size: 1.2rem;
+    top: 150px;
+    background: #fff;
 }
 
 table {
@@ -347,7 +400,6 @@ table th,
 table td {
     text-align: center;
     width: 200px;
-    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -371,7 +423,80 @@ table th {
     font-size: .85em;
     letter-spacing: .1em;
     text-transform: uppercase;
+    height: 35px;
 }
-/* --RODAPE-- */
 
-/* --RESPONSIVO-- */
+/* loguin */
+
+.loguin{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 9999;
+    background-color: var(--back1);
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loguin > .logo{
+    position: absolute;
+    top: 100px;
+    width: 400px;
+    height: auto !important;
+    text-align: center;
+}
+
+.loguin > .logo span{
+    font-size: 3rem;
+}
+
+.fisrtLogo{
+    color: #fff;
+    font-size: 2rem !important;
+}
+
+.erroLoguin{
+    display: none;
+}
+
+.loguin form{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loguin form input{
+    width: 300px;
+    margin-bottom: 20px;
+    height: 30px;
+    outline: none;
+    border-radius: 10px;
+    padding: 0 10px;
+}
+
+.loguin form label{
+    width: 300px;
+    font-size: 1.2rem;
+    color: var(--corFont);
+    padding: 5px;
+    cursor: text;
+}
+
+#loguinBtn{
+    font-size: 1.2rem;
+    font-weight: 700;
+    width: 150px;
+    height: 40px;
+    background-color: #fff;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}

@@ -22,12 +22,12 @@
         <!-- -navTopo- -->
         <nav class="menuTopo">
 
-            <div class="nome-topo">
-                <p>Fulano</p>
+            <div title="SAIR" class="nome-topo">
+                <p></p>
             </div>
 
             <div class="avatar-topo">
-                <p>F</p>
+                <p class="avatar-topoC">F</p>
             </div>
 
         </nav>
@@ -55,11 +55,7 @@
                 <ul class="ul2">
                     <li class="operacional">Operacional</li>
                     <li class="corporativo">Corporativo</li>
-                    <li>Repositorios
-                        <ul>
-                            <li>ServiceDesk</li>
-                        </ul>
-                    </li>
+                    <li class="repositorios">Repositorios</li>
                     <li>Arquivos</li>
                     <li>Info</li>
                     <li class="relChTable">Relatorio</li>
@@ -78,49 +74,49 @@
                 <h1>Operacional</h1>
 
                 <div class="cardLink">
-                    <a href="">
+                    <a href="https://smartit.local.srv.br/smartit/app/#/" target="_blank">
                         <span>SmartIT</span>
                         <span>Consulta</span>
                     </a>
                 </div>
 
                 <div class="cardLink">
-                    <a href="">
+                    <a href="https://dwp.local.srv.br/dwp/app/#/catalog" target="_blank">
                         <span>DWP</span>
                         <span>Abertura</span>
                     </a>
                 </div>
 
                 <div class="cardLink">
-                    <a href="">
+                    <a href="https://identidadeoi.local.srv.br/" target="_blank">
                         <span>IndentidadeOI</span>
                         <span>Consulta</span>
                     </a>
                 </div>
 
                 <div class="cardLink">
-                    <a href="">
+                    <a href="https://outlook.office.com/" target="_blank">
                         <span>OutLook</span>
                         <span>Comunicação</span>
                     </a>
                 </div>
 
                 <div class="cardLink">
-                    <a href="">
+                    <a href="https://teams.microsoft.com/" target="_blank">
                         <span>Teams</span>
                         <span>Comunicação</span>
                     </a>
                 </div>
 
                 <div class="cardLink">
-                    <a href="">
+                    <a href="" target="_blank">
                         <span>CCO</span>
                         <span>Consulta</span>
                     </a>
                 </div>
 
                 <div class="cardLink">
-                    <a href="">
+                    <a href="http://servicedesk/home" target="_blank">
                         <span>CCSN</span>
                         <span>Portal</span>
                     </a>
@@ -134,21 +130,21 @@
                 <h1>Corporativo</h1>
 
                 <div class="cardLink">
-                    <a href="">
+                    <a href="http://totalview.intranet/web/guest" target="_blank">
                         <span>TotalView</span>
                         <span>Consulta</span>
                     </a>
                 </div>
 
                 <div class="cardLink">
-                    <a href="">
+                    <a href="http://gip.brasiltelecom.com.br/" target="_blank">
                         <span>GIP</span>
                         <span>Abertura/Consulta</span>
                     </a>
                 </div>
 
                 <div class="cardLink">
-                    <a href="">
+                    <a href="https://minhabtcc.local.srv.br/" target="_blank">
                         <span>MinhaBTCC</span>
                         <span>Abertura/Consulta</span>
                     </a>
@@ -158,9 +154,23 @@
 
         </section>
 
+        
+
         <!-- --painelContent-- -->
         <aside class="painelContent">
 
+            <h1 class="pDados">Painel de Dados</h1>
+
+            <div class="atendidas">
+                <p>Atendidas:</p>
+                <p class="numAtendidas">0</p>
+            </div>
+
+            <div class="log">
+                <p>Tempo Logado:</p>
+                <p class="numLog"></p>
+            </div>
+            
         </aside>
 
         <!-- --menuModal-- -->
@@ -179,12 +189,12 @@
                 <form id="form">
 
                     <div>
-                        <label for="nomeModal">Nome:</label>
+                        <label for="nomeModal">Nome:*</label>
                         <input type="name" name="nome" id="nomeModal" class="inputClear" placeholder="Nome">
                     </div>
 
                     <div>
-                        <label for="matriculaModal">Matricula:</label>
+                        <label for="matriculaModal">Matricula:*</label>
                         <input type="text" name="matricula" id="matriculaModal" class="inputClear" placeholder="Matricula">
                     </div>
 
@@ -199,7 +209,7 @@
                     </div>
 
                     <div>
-                        <label for="empresaModal">Empresa:</label>
+                        <label for="empresaModal">Empresa:*</label>
                         <input type="text" name="empresa" id="empresaModal" class="inputClear" placeholder="Empresa">
                     </div>
 
@@ -208,6 +218,8 @@
                         <button type="button" class="btn-form">Registrar</button>
 
                         <span class="btn-x-modal">Fechar</span>
+
+                        <p class="acaoBtn"></p>
                         
                     </div>
 
@@ -220,8 +232,11 @@
         <!-- --tabelaCH-- -->
         <section id="table">
 
-            <i class="bi-js bi bi-x-lg btnXlist"></i>
-            <a class="btnXlist imprimir" target="_blank" href="relatorioExterno/auxiliar.html">Imprimir</a>
+            <div class="btnRelatorios">
+                <i class="bi-js bi bi-x-lg btnXlist"></i>
+                <a class="btnXlist imprimir" target="_blank" href="relatorioExterno/auxiliar.html">Imprimir</a>
+                <p class="btnXlist btnExcluir">Excluir</p>
+            </div>
 
             <table class="tabelaCH">
                 <thead class="tabelaCHhead">
@@ -229,7 +244,7 @@
                       <th>Nome</th>
                       <th>Matricula</th>
                       <th>Contato</th>
-                      <th>Nun Chamado</th>
+                      <th>Num Chamado</th>
                       <th>Empresa</th>
                     </tr>
                 </thead>
@@ -241,7 +256,31 @@
         
     </main>
 
+    <!-- loguin -->
+    <section class="loguin">
+
+        <section class="logo">
+
+            <span class="fisrtLogo">help</span><span>DESK</span>
+
+            <p class="erroLoguin"></p>
+
+        </section>
+
+        <form action="">
+            <label for="user">Usuario:</label>
+            <input type="text" name="" id="user">
+
+            <label for="passw">Senha:</label>
+            <input type="password" name="" id="passw">
+
+            <button type="button" id="loguinBtn">Entrar</button>
+        </form>
+
+    </section>
+
     <script src="script/script.js"></script>
+    <script src="script/pas.js"></script>
 </body>
 
 </html>

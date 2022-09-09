@@ -19,6 +19,7 @@ btnMenuL.addEventListener("click", ()=>{
 let visualCard = document.querySelectorAll(".linksVisual");
 let op = document.querySelector(".operacional");
 let cop = document.querySelector(".corporativo");
+let acaoBtn = document.querySelector(".acaoBtn");
 
 // remover classe Active -- links
 let removeClassActive = ()=>{
@@ -53,6 +54,7 @@ btnRegChamada.addEventListener("click", ()=>{
 
 biXmodal.addEventListener("click", ()=>{
     menuModal.classList.remove("menuModalActive");
+    acaoBtn.innerHTML = "";
 });
 
 // limpar input
@@ -76,9 +78,13 @@ let contatoInput =  document.querySelector("#contatoModal");
 let nunChInput = document.querySelector("#nunChModal");
 let empresaInput = document.querySelector("#empresaModal");
 
+
+let numAtendidas = document.querySelector(".numAtendidas");
+let dadosFy = JSON.parse(localStorage.getItem("bd_dados"));
+
 // cadastra banco de dados
 let cadastrarBD = ()=>{
-
+    
     let dadosConsul = JSON.parse(localStorage.getItem("bd_dados"));
 
     if(dadosConsul == null){
@@ -93,20 +99,33 @@ let cadastrarBD = ()=>{
         empresa: empresaInput.value
     };
 
+    let preencherAlto = ()=>{
+
+        if(dadosLista.nunCH.length == 0){
+            dadosLista.nunCH = "------"
+        }
+
+        if(dadosLista.contato.length == 0){
+            dadosLista.contato = "------"
+        }
+    }
+
+    preencherAlto()
+
     let dadosFy = JSON.parse(localStorage.getItem("bd_dados"));
 
     dadosFy.push(dadosLista);
 
     localStorage.setItem("bd_dados", JSON.stringify(dadosFy));
 
-    menuModal.classList.remove("menuModalActive");
+    numAtendidas.innerHTML = dadosFy.length;
 
     clearInput();
 };
 
 // btn cadastrar banco de dados
 btnForm.addEventListener("click", ()=>{
-    // validação
+    // validação form reg chamada
     let nomeI = nomeInput.value;
     let matriculaI = matriculaInput.value;
     let empresaI = empresaInput.value;
@@ -115,54 +134,78 @@ btnForm.addEventListener("click", ()=>{
         nomeInput.style.border = "1px solid red";
         matriculaInput.style.border = "1px solid red";
         empresaInput.style.border = "1px solid red";
+
+        acaoBtn.style.color = "#ff0000";
+        acaoBtn.innerHTML = "Dados obrigatorios*";
     }else{
-        cadastrarBD();
+        acaoBtn.style.color = "#008000";
+        acaoBtn.innerHTML = "Cadastrado";
+        
+        cadastrarBD()
+        
         nomeInput.style.border = "1px solid #000";
         matriculaInput.style.border = "1px solid #000";
         empresaInput.style.border = "1px solid #000";
-        };
-    });
 
-    let btnTableL = document.querySelector("#table");
+        setTimeout(()=>{
+            menuModal.classList.remove("menuModalActive");
 
-    // limpar tabelas
-    let clearTable = ()=>{
-        const rows=document.querySelectorAll('.tabelaCH>tbody tr')
-        rows.forEach(row=>row.parentNode.removeChild(row))
+            acaoBtn.innerHTML = "";
+        }, 2000)
     };
+});
 
-    // Visualizar lista de chamados
-    let  btnTable = ()=>{
+let btnTableL = document.querySelector("#table");
+
+// limpar tabelas
+let clearTable = ()=>{
+    const rows = document.querySelectorAll('.tabelaCH>tbody tr')
+    rows.forEach(row=>row.parentNode.removeChild(row))
+};
+
+// Visualizar lista de chamados
+let  btnTable = ()=>{
 
     clearTable();
-
+    
     btnTableL.style.display = "flex";
     
-        let bd_client = JSON.parse(localStorage.getItem("bd_dados"));
+    let bd_client = JSON.parse(localStorage.getItem("bd_dados"));
     
-        if(bd_client == null){
-            localStorage.setItem("bd_dados", "[]");
-        };
-
-        for(i = 0; i < bd_client.length; i++){
-            let newRow = document.createElement("tr");
-        
-            let creatRow = ()=>{
-                
-                newRow.innerHTML = `
-                <td>${bd_client[i].nome}<td>
-                <td>${bd_client[i].matricula}<td>
-                <td>${bd_client[i].contato}<td>
-                <td>${bd_client[i].nunCH}<td>
-                <td>${bd_client[i].empresa}<td>
-                `
-            };
-        
-            bd_client.forEach(creatRow);
-        
-            document.querySelector(".tabelaCHbody").appendChild(newRow);
-        };
+    if(bd_client == null){
+        localStorage.setItem("bd_dados", "[]");
     };
+
+    for(i = 0; i < bd_client.length; i++){
+        let newRow = document.createElement("tr");
+    
+        let creatRow = ()=>{
+            
+            newRow.innerHTML = `
+            <td>${bd_client[i].nome}<td>
+            <td>${bd_client[i].matricula}<td>
+            <td>${bd_client[i].contato}<td>
+            <td>${bd_client[i].nunCH}<td>
+            <td>${bd_client[i].empresa}<td>
+            `
+        };
+    
+        bd_client.forEach(creatRow);
+    
+        document.querySelector(".tabelaCHbody").appendChild(newRow);
+    };
+};
+
+//Excluir banco de dados
+let excluirDados = document.querySelector(".btnExcluir");
+
+excluirDados.addEventListener("click", ()=>{
+    localStorage.removeItem("bd_dados");
+
+    numAtendidas.innerHTML = "0";
+    
+    btnTableL.style.display = "none";
+});
 
 // fechar lista chamadas
 let btnXlist = document.querySelector(".btnXlist");
@@ -172,3 +215,13 @@ btnXlist.addEventListener("click", ()=>{
 
 let rel = document.querySelector(".relChTable");
 rel.addEventListener("click", btnTable);
+
+// Mostar contador - dados
+
+if(dadosFy === null){
+    dadosFy = 0;
+
+    numAtendidas.innerHTML = dadosFy;
+}else{
+    numAtendidas.innerHTML = dadosFy.length;
+}
