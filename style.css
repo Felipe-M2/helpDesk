@@ -48,6 +48,30 @@
     align-items: center;
 }
 
+.jornada{
+    display: flex;
+    align-items: center;
+}
+
+.statusLog{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ff0000;
+}
+
+.iniciarJ{
+    width: 100px;
+    height: 25px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    margin: 0 10px;
+    border-radius: 15px;
+    outline: none;
+    cursor: pointer;
+}
+
 .nome-topo{
     cursor: pointer;
 }
@@ -231,8 +255,18 @@
     font-size: 1.2rem;
 }
 
+.log{
+    display: flex;
+    align-items: center;
+}
+
 .numAtendidas, .numLog{
     color: #C43302;
+}
+
+.numLog p{
+    margin: 1px;
+    color: #000;
 }
 
 /* --menuModal-- */
