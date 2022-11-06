@@ -130,10 +130,9 @@ btnForm.addEventListener("click", ()=>{
     let matriculaI = matriculaInput.value;
     let empresaI = empresaInput.value;
 
-    if(nomeI == "" || matriculaI == "" || empresaI == ""){
+    if(nomeI == "" || matriculaI == ""){
         nomeInput.style.border = "1px solid red";
         matriculaInput.style.border = "1px solid red";
-        empresaInput.style.border = "1px solid red";
 
         acaoBtn.style.color = "#ff0000";
         acaoBtn.innerHTML = "Dados obrigatorios*";
@@ -145,7 +144,6 @@ btnForm.addEventListener("click", ()=>{
         
         nomeInput.style.border = "1px solid #000";
         matriculaInput.style.border = "1px solid #000";
-        empresaInput.style.border = "1px solid #000";
 
         setTimeout(()=>{
             menuModal.classList.remove("menuModalActive");
@@ -225,3 +223,76 @@ if(dadosFy === null){
 }else{
     numAtendidas.innerHTML = dadosFy.length;
 }
+
+// TEMPO LOGADO
+let hLog = document.querySelector(".hLog");
+let mLog = document.querySelector(".mLog");
+let sLog = document.querySelector(".sLog");
+
+let iniciarJ = document.querySelector(".iniciarJ");
+let statusLog = document.querySelector(".statusLog");
+
+let hTemp, mTemp, sTemp = 0;
+
+let temp = ()=>{
+    
+    if(mTemp == 60){
+        mTemp = 0;
+        hTemp++
+    }else if(sTemp == 59){
+        sTemp = 0;
+        mTemp++
+    }else{
+        sTemp++
+    }
+        
+    if(sTemp < 10){
+        document.querySelector(".tempCounterS").innerHTML = "0" + sTemp;
+    }else{
+        document.querySelector(".tempCounterS").innerHTML = sTemp;
+    }
+
+    if(mTemp < 10){
+        document.querySelector(".tempCounterM").innerHTML = "0" + mTemp;
+    }else{
+        document.querySelector(".tempCounterM").innerHTML = mTemp;
+    }
+
+    if(hTemp < 10){
+        document.querySelector(".tempCounterH").innerHTML = "0" + hTemp;
+    }else{
+        document.querySelector(".tempCounterH").innerHTML = hTemp;
+    }
+};
+
+iniciarJ.addEventListener("click", ()=>{
+
+    let interval = setInterval(temp, 1000);
+    
+    if(iniciarJ.innerHTML == "Iniciar"){
+        
+        hTemp = 0;
+        mTemp = 0;
+        sTemp = 0;
+    
+        sLog.classList.add("tempCounterS");
+        mLog.classList.add("tempCounterM");
+        hLog.classList.add("tempCounterH");
+
+        iniciarJ.innerHTML = "Finalizar";
+        statusLog.style.background = "#00ff00"
+
+        //interval();
+    }else{
+        sLog.classList.remove("tempCounterS");
+        mLog.classList.remove("tempCounterM");
+        hLog.classList.remove("tempCounterH");
+
+        iniciarJ.innerHTML = "Iniciar";
+
+        statusLog.style.background = "#ff0000";
+
+        clearInterval(interval);
+    }
+});
+
