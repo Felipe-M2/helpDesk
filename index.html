@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
@@ -21,6 +21,11 @@
 
         <!-- -navTopo- -->
         <nav class="menuTopo">
+
+            <div class="jornada">
+                <div class="statusLog"></div>
+                <button class="iniciarJ">Iniciar</button>
+            </div>
 
             <div title="SAIR" class="nome-topo">
                 <p></p>
@@ -122,6 +127,13 @@
                     </a>
                 </div>
 
+                <div class="cardLink">
+                    <a href="https://identidadeoi.oi.net.br/" target="_blank">
+                        <span>IndentidadeOI - (Externo)</span>
+                        <span>Consulta</span>
+                    </a>
+                </div>
+
             </div>
 
             <!-- -corporativo- -->
@@ -154,8 +166,6 @@
 
         </section>
 
-        
-
         <!-- --painelContent-- -->
         <aside class="painelContent">
 
@@ -168,7 +178,13 @@
 
             <div class="log">
                 <p>Tempo Logado:</p>
-                <p class="numLog"></p>
+                <div class="numLog">
+                    <p class="hLog">00</p>
+                    <p>:</p>
+                    <p class="mLog">00</p>
+                    <p>:</p>
+                    <p class="sLog">00</p>
+                </div>
             </div>
             
         </aside>
@@ -209,7 +225,7 @@
                     </div>
 
                     <div>
-                        <label for="empresaModal">Empresa:*</label>
+                        <label for="empresaModal">Empresa:</label>
                         <input type="text" name="empresa" id="empresaModal" class="inputClear" placeholder="Empresa">
                     </div>
 
